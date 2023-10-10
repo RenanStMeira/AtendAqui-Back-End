@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "types": ["node", "@types/googlemaps", "jest"],
+    "target": "ES2017",
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "middlewares/**/*.ts",
+    "path/to/admincontroller.ts"
+, "src/Config/Database/Mongo/dbConnect.ts", "src/server.ts"  ]
+}
