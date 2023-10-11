@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import prisma from "../Services/prismaService";
 
-export  class ProviderController{
+export  class ServiceController{
     async create(req: Request, res: Response) {
         const { name, typeservice} = req.body;
 
