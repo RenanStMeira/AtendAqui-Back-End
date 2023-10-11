@@ -1,15 +1,21 @@
 import { Request, Response } from "express";
 import prisma from "../Services/prismaService";
+import bcrypt from 'bcrypt';
 
 export  class UserController{
     async create(req: Request, res: Response) {
         const { name, email, contact, zipcode, adress, password } = req.body;
+
+        const hash = await bcrypt.hash(password, 10);
         try {
             const newUser = await prisma.users.create({
                 data: {
-                    name, email,contact, zipcode, adress, password
-                }
-            })
+                    name, email,contact, zipcode, adress, password: hash
+                },
+            });
+
+            const {password: _, ...users} = newUser;
+            
             return res.status(200).json({ message: `Usuario ${newUser} criado com sucesso !` });
         } catch (error) {
             return res.status(400).json({ message: 'Erro ao criar usuario' })
