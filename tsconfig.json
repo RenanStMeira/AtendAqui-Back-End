@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "types": ["node", "@types/googlemaps", "jest"],
+    "types": ["node", "@types/googlemaps", "googlemaps"],
     "target": "ES2017",
     "module": "commonjs",
     "declaration": true,
